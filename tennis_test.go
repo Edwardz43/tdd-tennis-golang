@@ -25,6 +25,7 @@ func TestShouldBeThirtyLove(t *testing.T) {
 }
 
 func addFirstPlayerScore(tenn *tennis.Tennis) {
-	tenn.FirstPlayerScore()
-	tenn.FirstPlayerScore()
+	for i := 0; i < 2; i++ {
+		tenn.FirstPlayerScore()
+	}
 }
