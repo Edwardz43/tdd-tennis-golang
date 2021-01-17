@@ -13,8 +13,8 @@ func beforeEach() {
 	tenn = new(tennis.Tennis)
 }
 
-func addFirstPlayerScore() {
-	for i := 0; i < 2; i++ {
+func addFirstPlayerScore(times int) {
+	for i := 0; i < times; i++ {
 		tenn.FirstPlayerScore()
 	}
 }
@@ -32,6 +32,6 @@ func TestShouldBeFifteenLove(t *testing.T) {
 
 func TestShouldBeThirtyLove(t *testing.T) {
 	beforeEach()
-	addFirstPlayerScore()
+	addFirstPlayerScore(2)
 	assert.Equal(t, "thirty love", tenn.Score())
 }
