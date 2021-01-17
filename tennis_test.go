@@ -114,3 +114,10 @@ func TestShouldElsaWin(t *testing.T) {
 	addSecondPlayerScore(2)
 	assert.Equal(t, "Elsa win", tenn.Score())
 }
+
+func TestShouldTomWin(t *testing.T) {
+	beforeEach()
+	deuce()
+	addFirstPlayerScore(2)
+	assert.Equal(t, "Tom win", tenn.Score())
+}
