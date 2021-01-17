@@ -10,7 +10,9 @@ import (
 var tenn *tennis.Tennis
 
 func beforeEach() {
-	tenn = new(tennis.Tennis)
+	tenn = &tennis.Tennis{
+		FirstPlayerScoreName: "Tom",
+	}
 }
 
 func addFirstPlayerScore(times int) {
