@@ -17,3 +17,10 @@ func TestShouldBeFifteenLove(t *testing.T) {
 	tenn.FirstPlayerScore()
 	assert.Equal(t, "fifteen love", tenn.Score())
 }
+
+func TestShouldBeThirtyLove(t *testing.T) {
+	tenn := new(tennis.Tennis)
+	tenn.FirstPlayerScore()
+	tenn.FirstPlayerScore()
+	assert.Equal(t, "thirty love", tenn.Score())
+}
