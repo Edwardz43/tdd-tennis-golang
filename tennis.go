@@ -17,13 +17,10 @@ type Tennis struct {
 }
 
 func (t *Tennis) Score() string {
-	if t.firstPlayerScoreTimes > 0 || t.secondPlayerScoreTimes > 0 {
-		if t.secondPlayerScoreTimes == t.firstPlayerScoreTimes {
-			return fmt.Sprintf("%s all", lookUp[t.firstPlayerScoreTimes])
-		}
-		return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
+	if t.secondPlayerScoreTimes == t.firstPlayerScoreTimes {
+		return fmt.Sprintf("%s all", lookUp[t.firstPlayerScoreTimes])
 	}
-	return "love all"
+	return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
 }
 
 func (t *Tennis) FirstPlayerScore() {
