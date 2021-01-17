@@ -26,13 +26,17 @@ func (t *Tennis) Score() string {
 		return fmt.Sprintf("%s all", lookUp[t.firstPlayerScoreTimes])
 	}
 	if t.isReadyForGamePoint() {
-		if t.firstPlayerScoreTimes-t.secondPlayerScoreTimes == 1 ||
-			t.firstPlayerScoreTimes-t.secondPlayerScoreTimes == -1 {
+		if t.scoreGapAbsEqualOne() {
 			return fmt.Sprintf("%s adv", t.advPlayerName())
 		}
 		return fmt.Sprintf("%s win", t.advPlayerName())
 	}
 	return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
+}
+
+func (t *Tennis) scoreGapAbsEqualOne() bool {
+	return t.firstPlayerScoreTimes-t.secondPlayerScoreTimes == 1 ||
+		t.firstPlayerScoreTimes-t.secondPlayerScoreTimes == -1
 }
 
 func (t *Tennis) advPlayerName() string {
