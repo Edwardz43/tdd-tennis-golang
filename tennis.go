@@ -19,7 +19,7 @@ type Tennis struct {
 }
 
 func (t *Tennis) Score() string {
-	if t.secondPlayerScoreTimes == t.firstPlayerScoreTimes {
+	if t.samScore() {
 		if t.firstPlayerScoreTimes >= 3 && t.secondPlayerScoreTimes >= 3 {
 			return "deuce"
 		}
@@ -39,6 +39,10 @@ func (t *Tennis) Score() string {
 		return fmt.Sprintf("%s win", advPlayer)
 	}
 	return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
+}
+
+func (t *Tennis) samScore() bool {
+	return t.secondPlayerScoreTimes == t.firstPlayerScoreTimes
 }
 
 func (t *Tennis) FirstPlayerScore() {
