@@ -26,19 +26,23 @@ func (t *Tennis) Score() string {
 		return fmt.Sprintf("%s all", lookUp[t.firstPlayerScoreTimes])
 	}
 	if t.isReadyForGamePoint() {
-		var advPlayer string
-		if t.firstPlayerScoreTimes > t.secondPlayerScoreTimes {
-			advPlayer = t.FirstPlayerScoreName
-		} else {
-			advPlayer = t.SecondPlayerName
-		}
 		if t.firstPlayerScoreTimes-t.secondPlayerScoreTimes == 1 ||
 			t.firstPlayerScoreTimes-t.secondPlayerScoreTimes == -1 {
-			return fmt.Sprintf("%s adv", advPlayer)
+			return fmt.Sprintf("%s adv", t.advPlayerName())
 		}
-		return fmt.Sprintf("%s win", advPlayer)
+		return fmt.Sprintf("%s win", t.advPlayerName())
 	}
 	return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
+}
+
+func (t *Tennis) advPlayerName() string {
+	var advPlayer string
+	if t.firstPlayerScoreTimes > t.secondPlayerScoreTimes {
+		advPlayer = t.FirstPlayerScoreName
+	} else {
+		advPlayer = t.SecondPlayerName
+	}
+	return advPlayer
 }
 func (t *Tennis) isReadyForGamePoint() bool {
 	return t.firstPlayerScoreTimes >= 3 && t.secondPlayerScoreTimes >= 3
