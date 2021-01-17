@@ -16,7 +16,7 @@ type Tennis struct {
 }
 
 func (t *Tennis) Score() string {
-	if t.secondPlayerScoreTimes == 1 {
+	if t.secondPlayerScoreTimes > 0 {
 		return fmt.Sprintf("love %s", lookUp[t.secondPlayerScoreTimes])
 	}
 	if t.firstPlayerScoreTimes > 0 {
