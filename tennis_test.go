@@ -25,6 +25,11 @@ func addSecondPlayerScore(times int) {
 	}
 }
 
+func deuce() {
+	addFirstPlayerScore(3)
+	addSecondPlayerScore(3)
+}
+
 func TestShouldBeLoveAll(t *testing.T) {
 	beforeEach()
 	assert.Equal(t, "love all", tenn.Score())
@@ -82,7 +87,6 @@ func TestShouldBeThirtyAll(t *testing.T) {
 
 func TestShouldBeDeuce(t *testing.T) {
 	beforeEach()
-	addFirstPlayerScore(3)
-	addSecondPlayerScore(3)
+	deuce()
 	assert.Equal(t, "deuce", tenn.Score())
 }
