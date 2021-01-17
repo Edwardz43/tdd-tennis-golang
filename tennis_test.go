@@ -90,3 +90,10 @@ func TestShouldBeDeuce(t *testing.T) {
 	deuce()
 	assert.Equal(t, "deuce", tenn.Score())
 }
+
+func TestShouldTomAdv(t *testing.T) {
+	beforeEach()
+	deuce()
+	tenn.FirstPlayerScore()
+	assert.Equal(t, "Tom adv", tenn.Score())
+}
