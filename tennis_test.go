@@ -99,3 +99,10 @@ func TestShouldTomAdv(t *testing.T) {
 	tenn.FirstPlayerScore()
 	assert.Equal(t, "Tom adv", tenn.Score())
 }
+
+func TestShouldElsaAdv(t *testing.T) {
+	beforeEach()
+	deuce()
+	tenn.SecondPlayerScore()
+	assert.Equal(t, "Elsa adv", tenn.Score())
+}

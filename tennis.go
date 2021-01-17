@@ -25,7 +25,10 @@ func (t *Tennis) Score() string {
 		return fmt.Sprintf("%s all", lookUp[t.firstPlayerScoreTimes])
 	}
 	if t.firstPlayerScoreTimes >= 3 && t.secondPlayerScoreTimes >= 3 {
-		return fmt.Sprintf("%s adv", t.FirstPlayerScoreName)
+		if t.firstPlayerScoreTimes > t.secondPlayerScoreTimes {
+			return fmt.Sprintf("%s adv", t.FirstPlayerScoreName)
+		}
+		return "Elsa adv"
 	}
 	return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
 }
