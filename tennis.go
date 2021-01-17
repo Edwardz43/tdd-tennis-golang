@@ -15,6 +15,7 @@ type Tennis struct {
 	firstPlayerScoreTimes  int
 	secondPlayerScoreTimes int
 	FirstPlayerScoreName   string
+	SecondPlayerName       string
 }
 
 func (t *Tennis) Score() string {
@@ -28,7 +29,7 @@ func (t *Tennis) Score() string {
 		if t.firstPlayerScoreTimes > t.secondPlayerScoreTimes {
 			return fmt.Sprintf("%s adv", t.FirstPlayerScoreName)
 		}
-		return "Elsa adv"
+		return fmt.Sprintf("%s adv", t.SecondPlayerName)
 	}
 	return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
 }
