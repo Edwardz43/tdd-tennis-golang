@@ -41,3 +41,9 @@ func TestShouldBeFortyLove(t *testing.T) {
 	addFirstPlayerScore(3)
 	assert.Equal(t, "forty love", tenn.Score())
 }
+
+func TestShouldBeLoveFifteen(t *testing.T) {
+	beforeEach()
+	tenn.SecondPlayerScore()
+	assert.Equal(t, "love fifteen", tenn.Score())
+}

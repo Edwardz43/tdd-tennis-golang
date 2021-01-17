@@ -11,10 +11,14 @@ func init() {
 }
 
 type Tennis struct {
-	firstPlayerScoreTimes int
+	firstPlayerScoreTimes  int
+	secondPlayerScoreTimes int
 }
 
 func (t *Tennis) Score() string {
+	if t.secondPlayerScoreTimes == 1 {
+		return "love fifteen"
+	}
 	if t.firstPlayerScoreTimes > 0 {
 		return fmt.Sprintf("%s love", lookUp[t.firstPlayerScoreTimes])
 	}
@@ -23,4 +27,8 @@ func (t *Tennis) Score() string {
 
 func (t *Tennis) FirstPlayerScore() {
 	t.firstPlayerScoreTimes++
+}
+
+func (t *Tennis) SecondPlayerScore() {
+	t.secondPlayerScoreTimes++
 }
