@@ -6,6 +6,14 @@ import (
 	"github.com/bmizerany/assert"
 )
 
+type Tennis struct {
+}
+
+func (t *Tennis) score() string {
+	return "love all"
+}
+
 func TestShouldBeLoveAll(t *testing.T) {
-	assert.Equal(t, "love all", "love all")
+	tenn := new(Tennis)
+	assert.Equal(t, "love all", tenn.score())
 }
