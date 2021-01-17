@@ -31,6 +31,10 @@ func (t *Tennis) Score() string {
 		}
 		return fmt.Sprintf("%s win", t.advPlayerName())
 	}
+	return t.lookUpScore()
+}
+
+func (t *Tennis) lookUpScore() string {
 	return fmt.Sprintf("%s %s", lookUp[t.firstPlayerScoreTimes], lookUp[t.secondPlayerScoreTimes])
 }
 
