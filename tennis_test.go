@@ -94,28 +94,28 @@ func TestShouldBeDeuce(t *testing.T) {
 	assert.Equal(t, "deuce", tenn.Score())
 }
 
-func TestShouldTomAdv(t *testing.T) {
+func TestShouldBeTomAdv(t *testing.T) {
 	beforeEach()
 	deuce()
 	tenn.FirstPlayerScore()
 	assert.Equal(t, "Tom adv", tenn.Score())
 }
 
-func TestShouldElsaAdv(t *testing.T) {
+func TestShouldBeElsaAdv(t *testing.T) {
 	beforeEach()
 	deuce()
 	tenn.SecondPlayerScore()
 	assert.Equal(t, "Elsa adv", tenn.Score())
 }
 
-func TestShouldElsaWin(t *testing.T) {
+func TestShouldBeElsaWin(t *testing.T) {
 	beforeEach()
 	deuce()
 	addSecondPlayerScore(2)
 	assert.Equal(t, "Elsa win", tenn.Score())
 }
 
-func TestShouldTomWin(t *testing.T) {
+func TestShouldBeTomWin(t *testing.T) {
 	beforeEach()
 	deuce()
 	addFirstPlayerScore(2)
