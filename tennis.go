@@ -6,6 +6,7 @@ var lookUp = make(map[int]string, 4)
 
 func init() {
 	lookUp[1] = "fifteen"
+	lookUp[2] = "thirty"
 }
 
 type Tennis struct {

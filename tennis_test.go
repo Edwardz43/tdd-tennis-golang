@@ -9,7 +9,7 @@ import (
 
 var tenn *tennis.Tennis
 
-func init() {
+func beforeEach() {
 	tenn = new(tennis.Tennis)
 }
 
@@ -20,15 +20,18 @@ func addFirstPlayerScore() {
 }
 
 func TestShouldBeLoveAll(t *testing.T) {
+	beforeEach()
 	assert.Equal(t, "love all", tenn.Score())
 }
 
 func TestShouldBeFifteenLove(t *testing.T) {
+	beforeEach()
 	tenn.FirstPlayerScore()
 	assert.Equal(t, "fifteen love", tenn.Score())
 }
 
 func TestShouldBeThirtyLove(t *testing.T) {
+	beforeEach()
 	addFirstPlayerScore()
 	assert.Equal(t, "thirty love", tenn.Score())
 }
