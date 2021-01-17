@@ -44,13 +44,10 @@ func (t *Tennis) scoreGapAbsEqualOne() bool {
 }
 
 func (t *Tennis) advPlayerName() string {
-	var advPlayer string
 	if t.firstPlayerScoreTimes > t.secondPlayerScoreTimes {
-		advPlayer = t.FirstPlayerName
-	} else {
-		advPlayer = t.SecondPlayerName
+		return t.FirstPlayerName
 	}
-	return advPlayer
+	return t.SecondPlayerName
 }
 func (t *Tennis) isReadyForGamePoint() bool {
 	return t.firstPlayerScoreTimes >= 3 && t.secondPlayerScoreTimes >= 3
