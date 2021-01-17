@@ -79,3 +79,10 @@ func TestShouldBeThirtyAll(t *testing.T) {
 	addSecondPlayerScore(2)
 	assert.Equal(t, "thirty all", tenn.Score())
 }
+
+func TestShouldBeDeuce(t *testing.T) {
+	beforeEach()
+	addFirstPlayerScore(3)
+	addSecondPlayerScore(3)
+	assert.Equal(t, "deuce", tenn.Score())
+}
