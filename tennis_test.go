@@ -11,8 +11,8 @@ var tenn *tennis.Tennis
 
 func beforeEach() {
 	tenn = &tennis.Tennis{
-		FirstPlayerScoreName: "Tom",
-		SecondPlayerName:     "Elsa",
+		FirstPlayerName:  "Tom",
+		SecondPlayerName: "Elsa",
 	}
 }
 

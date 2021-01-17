@@ -14,7 +14,7 @@ func init() {
 type Tennis struct {
 	firstPlayerScoreTimes  int
 	secondPlayerScoreTimes int
-	FirstPlayerScoreName   string
+	FirstPlayerName        string
 	SecondPlayerName       string
 }
 
@@ -46,7 +46,7 @@ func (t *Tennis) scoreGapAbsEqualOne() bool {
 func (t *Tennis) advPlayerName() string {
 	var advPlayer string
 	if t.firstPlayerScoreTimes > t.secondPlayerScoreTimes {
-		advPlayer = t.FirstPlayerScoreName
+		advPlayer = t.FirstPlayerName
 	} else {
 		advPlayer = t.SecondPlayerName
 	}
