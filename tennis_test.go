@@ -1,4 +1,4 @@
-package tennis_test
+package tennis
 
 import (
 	"testing"
