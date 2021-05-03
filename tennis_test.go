@@ -3,9 +3,19 @@ package tennis
 import (
 	"testing"
 
-	"github.com/bmizerany/assert"
+	"github.com/stretchr/testify/suite"
 )
 
-func TestShouldBeLoveAll(t *testing.T) {
-	assert.Equal(t, "love all", "love all")
+func TestTennisTestSuit(t *testing.T) {
+	suite.Run(t, new(TennisTestSuite))
+}
+
+type TennisTestSuite struct {
+	suite.Suite
+}
+
+func (s *TennisTestSuite) SetUpTest() {}
+
+func (s *TennisTestSuite) TestShouldBeLoveAll() {
+	s.Equal("love all", "love all")
 }
