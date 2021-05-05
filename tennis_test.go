@@ -14,7 +14,7 @@ type TennisTestSuite struct {
 	suite.Suite
 }
 
-func (s *TennisTestSuite) SetUpTest() {}
+func (s *TennisTestSuite) SetupTest() {}
 
 func (s *TennisTestSuite) TestShouldBeLoveAll() {
 	s.Equal("love all", "love all")
