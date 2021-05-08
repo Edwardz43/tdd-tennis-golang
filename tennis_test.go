@@ -12,6 +12,7 @@ func TestTennisTestSuit(t *testing.T) {
 
 type TennisTestSuite struct {
 	suite.Suite
+	*tennis
 }
 
 func (s *TennisTestSuite) SetupTest() {}
